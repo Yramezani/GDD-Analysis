@@ -18,8 +18,7 @@ for fname in glob.glob(args.GDDinfolder + "*.csv"):  # For loop for .csv files i
     print(df.columns.values)
     tempmax = df['Max Temp (°C)']
     tempmin = df['Min Temp (°C)']
+    year = list(df['Year'])[1]
     GDD = GDDcalculate(list(tempmin), list(tempmax), args.tbase, args.tupper)
-    print(GDD)
     df["GDD"] = GDD
-    output = args.GDDoutfolder + str(args.tbase) + "_" + str(args.tupper) + "_GDD.csv"
-    df.to_csv(output)
+    df.to_csv(args.GDDoutfolder + str(args.tbase) + "_" + str(args.tupper)+"_"+str(year)+ "_GDD.csv")
