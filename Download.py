@@ -40,6 +40,7 @@ def download(stationid, year):
     data_frame = pd.read_csv(fname, skiprows=25, sep=",", encoding="ISO-8859-1")
     columns =range (0,10)
     df = data_frame.iloc[columns]
+    df_rename = df.columns=["Date/Time","Year","Month","Day","Data Quality","Max Temp (°C)","Max Temp Flag","Min Temp (°C)","Min Temp Flag","Mean Temp (°C)"]
     new_fname =  os.path.dirname(os.path.realpath(__file__)) + "/../csv_data/{}_{}.csv".format(stationid, year)
     df_rename.to_csv(new_fname)
     print("File saved into: " + new_fname)
