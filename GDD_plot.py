@@ -2,7 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy as np
-df=pd.read_csv("GDD.csv",usecols=['Date/Time','GDD'],parse_dates=['Date/Time'])
+Data=pd.read_csv("GDD.csv",usecols=['Date/Time','GDD'],parse_dates=['Date/Time'])
+df=pd.DataFrame(Data)
+cleandata=clean_data(df)
+df.to_csv('GDD.csv')
 df.set_index('Date/Time',inplace=True)
 fig,ax = plt.subplots(figsize=(7,5))
 Cumulative_GDD = np.cumsum( df['GDD'])
