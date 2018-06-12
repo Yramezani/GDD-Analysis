@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[15]:
+# In[25]:
 
 
 from bokeh.plotting import figure, output_file, show
@@ -10,41 +10,41 @@ import pandas as pd
 import numpy as np
 import os
 import sys
+import glob
 
 
-# In[16]:
+# In[32]:
 
 
 def make_bokehplot(filename):
-    df = pd.read_csv(filename)
-    accum_GDD = np.cumsum(df['GDD'])
+    for filename in glob.glob("*GDD.csv"):
+        D = pd.read_csv(filename)
+        df = pd.DataFrame(D)
+        df.index
+        accum_GDD = np.cumsum(df['GDD'])
 
-
-    basename = os.path.basename(filename) # mydir/12345.csv -> 12345
-    output = basename + '_bokeh.html'
-    output_file(output, 
-                title="Accumulative GDD data for St. John's in 2017")
-
-
-
-    fig = figure(tools="pan,box_zoom,wheel_zoom,reset,save,hover,box_select", plot_width = 700, plot_height = 700, 
+        fig = figure(tools="pan,box_zoom,wheel_zoom,reset,save,hover,box_select", plot_width = 700, plot_height = 700, 
            title = "Accumulative GDD for St. John's in 2017", x_axis_label = 'Year (in days)', 
              y_axis_label = 'Calculated GDD')
 
-    hover = HoverTool(
-        tooltips=[
-            ("Day of year", "$index"), 
-            ("GDD value", "$accum_GDD")
-                ]
-            )
+        hover = HoverTool(
+            tooltips=[
+                ("Day of year", "$index"), 
+                ("GDD value", "$accum_GDD")
+                    ]
+                )
 
-    fig.circle(df.index, accum_GDD, size=10, color='purple', alpha=0.5)
-    show(fig)
-    # save to html...
+        fig.circle(df.index, accum_GDD, size=9, color='purple', alpha=0.5)
+        show(fig)
+        # save to html...
+        
+        basename = os.path.basename(filename) # mydir/12345.csv -> 12345
+        output = basename + '_bokeh.html'
+        output_file(output, title="Accumulative GDD data for St. John's in 2017")
     
 
 
-# In[17]:
+# In[33]:
 
 
 if __name__=="__main__":
