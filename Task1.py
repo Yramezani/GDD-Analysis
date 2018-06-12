@@ -1,3 +1,5 @@
+'''This module plots average of GDD for couple of years, and also its percentile of 5-95 and 25-75 as a band. It also
+shows scatter plot of GDD for last year involved in calculations'''
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -12,7 +14,7 @@ for fname in glob.glob("*GDD.csv"):  # For loop for .csv files in given input fo
     print("Accessing headers of " + fname)
 
     year = list(df['Year'])[1]
-    df = df[df["Date/Time"] != str(year) + "-02-29"]  # Deletes Febuary 29th from leap year's data
+    df = df[df["Date/Time"] != str(year) + "-02-29"]  # Deletes February 29th from leap year's data
     t = list(df["GDD"])
     T.append(t)
     average = np.nanmean(np.array(T), axis=0)
