@@ -1,3 +1,5 @@
+'''Shows a figure containing two plots. Upper one, is histogram for both minimum and maximum temperatures for first 6
+months of year. lower one is histogram of mean temperature for the same range of time'''
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
