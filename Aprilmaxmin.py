@@ -1,3 +1,4 @@
+'''A double-bar plot of April's maximum and Minimum temperatures of each day'''
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
