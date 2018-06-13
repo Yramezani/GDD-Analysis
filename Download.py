@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[32]:
+# In[40]:
 
 
 import os
@@ -50,7 +50,7 @@ def download():
     #df_rename = df.columns=["Date/Time","Year","Month","Day","Data Quality","Max Temp (°C)","Max Temp Flag","Min Temp (°C)","Min Temp Flag","Mean Temp (°C)"]
     #pathlib.Path('../' + str('inputfolder')).mkdir(parents=True, exist_ok=True)
     #df.to_csv("../" + str(inputfolder) + "/{}_{}.csv".format(Namecity, year))
-    new_fname =  os.path.dirname(os.path.realpath(__file__)) + "/../inputfolder2/{}_{}.csv".format(Namecity, year)
+    new_fname =  os.path.dirname(os.path.realpath(__file__)) + "/../{}_{}.csv".format(Namecity, year)
     df.to_csv(new_fname)
     print("File saved into: " + new_fname)
      #data.to_csv("./Input/"+str(year)+"_"+city+"_temp.csv")
@@ -61,7 +61,7 @@ def download():
 
 
 
-# In[33]:
+# In[41]:
 
 
 
@@ -137,7 +137,7 @@ def Ncity_to_stationID(Namecity, year):
 
 
 
-# In[34]:
+# In[42]:
 
 
 def clean_data(dataframe):
@@ -156,7 +156,7 @@ def clean_data(dataframe):
 
 
 
-# In[35]:
+# In[43]:
 
 
 download()
