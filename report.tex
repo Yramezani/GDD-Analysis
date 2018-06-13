@@ -1,8 +1,14 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{gensymb}
+
 \title{CMSC 6950 Final Project}
 \smallskip
 \author{
         \textbf{Team 2:}\\
-      %  \smallskip \\
         A. Ghayour-Khiavi, S. Gallant,\\
         T. Dasyam, Y. Ramezani \\
         \and
@@ -10,7 +16,8 @@
 \smallskip
 \date{\textit{June 14, 2018}}
 
-\documentclass[13pt]{article}
+\DeclareMathSizes{12}{18}{12}{12}
+
 
 \begin{document}
 \maketitle
@@ -19,19 +26,133 @@
 Growing degree days (GDD) are values used in phenology measuring total heat accumulation in a region, in order to predict rates of development in  plants or animals. Using the historical climate data available from the Government of Canada, this project aims to create a coherent workflow leading to the calculation and analysis of GDD for a number of Canadian cities.  
 \end{abstract}
 
-\section{Introduction}
-Explain GDD (eqn, implications, etc)
+\smallskip
 
-%\paragraph{Outline}
-%The remainder of this article is organized as follows.
-%Section~\ref{previous work} gives account of previous work.
-%Our new and exciting results are described in Section~\ref{results}.
+\tableofcontents
+
+
+\pagebreak
+
+\section{Motivations}\label{motivations}
+
+Plants require a number of things in order to grow: sunlight, 
+water, CO\textsubscript{2}, and nutrients. Though sunlight does provide the energy 
+needed for plants to undergo photosynthesis, their development and maturation 
+is also largely depend-ent on daily air temperatures.
+
+\bigskip
+\par 
+Growing degree days (GDD) are a way to monitor the total heat 
+accumulated by the plant through the ambient temperature, over a 
+period of time. Many species will only hit development milestones 
+after a certain accumulated amount of heat, so GDD can be used to 
+keep track of the heat that has been available in a region over time. 
+
+\bigskip
+\par 
+GDD proves an important tool for biologists, horiculturists, and agriculturers, 
+allowing them to predict things like crop harvest dates, 
+nutrient timing, or dates when insects will emerge.    
+
+\pagebreak
+
 
 \section{Core tasks}\label{core tasks}
-Here we discuss assigned core tasks, order of steps/execution, etc
+\subsection{Calculating GDD}\label{calculating gdd}
 
-\section{Data analysis}\label{data analysis}
+Growing degrees are defined as the number of degrees the average daily 
+temperature is, above a set base value (Tbase). This base value is 
+usually defaulted to 10 \degree C, though each species may have a more 
+accurate value, and signifies the temperature below which no growth 
+will occur. If the daily average happens to be below Tbase, the GDD 
+value for that day is set to zero. \\
+
+\bigskip
+\par
+
+The value of daily GDD is calculated with the formula:
+$$
+\textit{GDD\textsubscript{daily}} =  \text{max}( \tfrac{\text{Tmax}+\text{Tmin}}{2}-\text{Tbase}, 0)
+$$
+
+\bigskip
+\bigskip
+
+For accumulated GDD, the daily values are summed:
+$$
+\sum_{i=1}^n ( \tfrac{\text{Tmax}+\text{Tmin}}{2}-\text{Tbase})
+$$
+
+\bigskip
+
+\par
+Climate data is available for a multitude of Canadian weather stations, provided
+by the Government of Canada, where temperatures and precipitation values are reported. 
+Using this data, GDD values can be calculated for 
+specific regions and time periods, allowing for analysis of climate trends and patterns. 
+
+\pagebreak
+
+\section{Results}\label{data analysis}
 Here we talk about plots/resultant data
+
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize Annual cycle of min/max daily temperatures for (City1) in (year)}
+\label{Label}		  
+\end{figure}
+		
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize Annual cycle of min/max daily temperatures for (City2) in (year)}
+\label{Label}		  
+\end{figure}
+		
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize Annual cycle of min/max daily temperatures for (City3) in (year)}
+\label{Label}		  
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize Accumulated GDD for (City1) in (year)}
+\label{Label}		  
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize Accumulated GDD for (City2) in (year)}
+\label{Label}		  
+\end{figure}
+	
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize Accumulated GDD for (City3) in (year)}
+\label{Label}		  
+\end{figure}	
+
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{} 
+\caption{\scriptsize GDD for (City) in (year) with confidence intervals}
+\label{Label}		  
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.9\textwidth]{./Docs/GDD_bokeh.html} 
+\caption{\scriptsize Bokeh plot of GDD for (City) in (year)}
+\label{Label}		  
+\end{figure}
+
+\pagebreak
 
 \section{Conclusions}\label{conclusions}
 We worked hard, and achieved very little.
@@ -40,4 +161,3 @@ We worked hard, and achieved very little.
 \bibliography{main}
 
 \end{document}
-This is never printed
