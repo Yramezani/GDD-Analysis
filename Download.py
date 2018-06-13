@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[5]:
+# In[4]:
 
 
 import os
@@ -37,12 +37,15 @@ def download(Namecity, year):
     print("Download completed...")
     print("Extracting required columns...")
 
-    data_frame = pd.read_csv(fname, skiprows=25, sep=",", encoding="ISO-8859-1")
+    data_frame = pd.read_csv(fname, skiprows=22, header=1, sep=",", encoding="ISO-8859-1")
     columns =range (0,10)
     df = data_frame.iloc[:,columns]
-    df_rename = df.columns=["Date/Time","Year","Month","Day","Data Quality","Max Temp (°C)","Max Temp Flag","Min Temp (°C)","Min Temp Flag","Mean Temp (°C)"]
-    new_fname =  os.path.dirname(os.path.realpath(__file__)) + "/../{}_{}.csv".format(Namecity, year)
-    df_rename.to_csv(new_fname)
+    df=clean_data(df)
+    #df_rename = df.columns=["Date/Time","Year","Month","Day","Data Quality","Max Temp (°C)","Max Temp Flag","Min Temp (°C)","Min Temp Flag","Mean Temp (°C)"]
+    pathlib.Path('../' + str(inputfolder)).mkdir(parents=True, exist_ok=True)
+    df.to_csv("../" + str(inputfolder) + "/{}_{}.csv".format(Namecity, year))
+    new_fname =  os.path.dirname(os.path.realpath(__file__)) + "/../inputfolder2/{}_{}.csv".format(Namecity, year)
+    df.to_csv(new_fname)
     print("File saved into: " + new_fname)
      #data.to_csv("./Input/"+str(year)+"_"+city+"_temp.csv")
     # removing temporary saved file
