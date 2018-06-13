@@ -93,7 +93,7 @@ import pandas as pd
 Return:
     string: this is a string value that defines the *.csv file that was downloaded/stored.
 """
-def download(Namecity, year, inputfolder="csv_data"):
+def download(Namecity, year, inputfolder="input"):
     print("Started downloading ...")
     stationid= Ncity_to_stationID(Namecity, year) 
     fname = "{}_{}_t.csv".format(stationid, year)
@@ -117,10 +117,15 @@ def download(Namecity, year, inputfolder="csv_data"):
     columns =range (0,10)
     data_frame = data_frame.iloc[:,columns]
 #     data_frame=clean_data(data_frame)
+    data_frame["Name"] = [str(Namecity)]*len(data_frame["Date/Time"])
     pathlib.Path('./'+str(inputfolder)).mkdir(parents=True, exist_ok=True)
     data_frame.to_csv("./"+str(inputfolder)+"/{}_{}.csv".format(Namecity, year))
     print("File saved into: "+str(inputfolder))
     os.remove(fname)
     print("File saved.")
 
-#download('Victoria', 2014, inputfolder="Downloaded")
+cityname=['Victoria','Montreal','Ottawa']
+years=[2008,2009,2010,2011,2012,2013,2014,2015,2016,2017]
+for i in cityname:
+    for j in years:
+        download(i, j, inputfolder="input")
