@@ -5,9 +5,11 @@ import pandas as pd
 import glob
 Min = [0]*30
 Max = [0]*30
-for fname in glob.glob("*GDD.csv"):  # For loop for .csv files in given input folder
+for fname in glob.glob("./input/Montreal*"):  # For loop for .csv files in given input folder
     D = pd.read_csv(fname, header=0)  # skipped rows will change if data frame's shape change
     df = pd.DataFrame(D)
+    year = list(df['Year'])[1]
+    df = df[df["Date/Time"] != str(year)+"-02-29"]
     df = df[df["Month"] == 4]  # Takes data for April and discards the rest
     dfmax = list(df["Max Temp (°C)"])
     dfmin = list(df["Min Temp (°C)"])
@@ -19,14 +21,16 @@ for fname in glob.glob("*GDD.csv"):  # For loop for .csv files in given input fo
             Min[i] = t
 N = 30
 ind = np.arange(N)
-width = 0.35
-plt.bar(ind, Min, width, label='Min')
-plt.bar(ind + width, Max, width, label='Max')
+width = 0.40
+plt.bar(ind, Min, width, label='Min',color='blue')
+plt.bar(ind + width, Max, width, label='Max',color='red')
 
 plt.ylabel('Days')
-plt.title('Maximum and minimum temperatures in April')
+plt.title('Maximum and Minimum daily tempratures of April from 2014 to 2017, Montreal')
 
 plt.xticks(ind + width / 2, np.arange(N)+1)
 plt.legend(loc='best')
+plt.xticks(rotation=90)
 plt.tight_layout()
-plt.show()
+# plt.show()
+plt.savefig('./docs/aprildaily.png')
