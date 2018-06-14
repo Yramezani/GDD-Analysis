@@ -33,7 +33,7 @@ plt.fill_between(x, U, D, alpha=0.15, color='blue', label="5-95 percentile")
 plt.fill_between(x, Uu, Dd, alpha=0.15, color='red', label="25-75 percentile")
 
 plt.xlabel('time')
-plt.ylabel('Daily Accumulation (Celicius)')
+plt.ylabel('Daily Accumulation (Celsius)')
 plt.title('2014-2017 daily Growing degree days of Montreal')
 plt.grid(True)
 plt.tight_layout()
