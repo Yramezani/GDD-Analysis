@@ -43,4 +43,4 @@ plt.xticks([0, 30, 58, 89, 119, 150, 180, 211, 242, 272, 303, 333],
 fig = plt.gcf()
 fig.set_size_inches(18.5, 10.5)
 fig.savefig('test2png.png', dpi=100)
-plt.savefig('./docs/Task1.png')
+plt.savefig('./docs/task1.png')
