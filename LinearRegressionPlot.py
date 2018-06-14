@@ -25,6 +25,7 @@ tbase = 10
 tupper = 50
 startYear=2014
 endYear=2016
+cityname="Montreal"
 #The function takes city name and years as input and calcultes Linear Regression for spesific citiy.
 def LinearRegressionplots(cityname,tbase, tupper,startYear,endYear):
     """The function takes city name and years as input and calcultes Linear Regression for spesific citiy."""
@@ -36,11 +37,12 @@ def LinearRegressionplots(cityname,tbase, tupper,startYear,endYear):
             df=pd.DataFrame(Data)
             year = list(df['Year'])[1]
             df = df[df["Date/Time"] != str(year)+"-02-29"]
-            tempmax = df['Max Temp (Â°C)']
-            tempmin = df['Min Temp (Â°C)'] 
+            tempmax = df['Max Temp (°C)']
+            tempmin = df['Min Temp (°C)'] 
             length = len(pd.Series.dropna(tempmin))
             #calculates the growing degree days based on the following input
-            t= GDDcalculate(list(tempmin),list(tempmax), tbase, tupper, length)
+#             t= GDDcalculate(list(tempmin),list(tempmax), tbase, tupper, length)
+            t= df["GDD"]
             Calculated_GDD.append(t) 
             #calculates the cumulative growing degree days
             Cumulative_GDD=np.cumsum(np.array(Calculated_GDD)) 
