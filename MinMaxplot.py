@@ -53,7 +53,7 @@ def MinMaxPlot(cityname,year):
             plt.grid(True)              
 
     
-MinMazPlot('Victoria', 2017)
+MinMaxPlot('Victoria', 2017)
 plt.savefig('./docs/Min_Max_Temp_Victoria.png')
 #plt.show()
 MinMaxPlot('Montreal',2017)
