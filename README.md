@@ -1,14 +1,14 @@
 ### DownloadData.py modules will download data files for three cities: Victoria, Montreal, Toronto from 2014 to 2017. They will be saved in ./input.
 ### GDD.py can be called via command line, inputs would be of the form:
-### GDD.py base_temperature upper_temperature Input_folder Output_folder
-* base_temperature :
-  - "-tbase", "-b", type=float, default=10
-* upper_temperature :
-  - "-tupper", "-u", type=float, default=30, help="Upper temperature")
-* Input_folder :
-  - "-GDDinfolder", "-Gi", type=str, default="./input/", help="Folder containing GDD input files.")
-* Output_folder:
-  - "-GDDoutfolder", "-Go", type=str, default="./input/", help="Folder that will keep GDD output files."
+  * GDD.py base_temperature upper_temperature Input_folder Output_folder
+  * base_temperature :
+    - "-tbase", "-b", type=float, default=10
+  * upper_temperature :
+    - "-tupper", "-u", type=float, default=30, help="Upper temperature")
+  * Input_folder :
+    - "-GDDinfolder", "-Gi", type=str, default="./input/", help="Folder containing GDD input files.")
+  * Output_folder:
+    - "-GDDoutfolder", "-Go", type=str, default="./input/", help="Folder that will keep GDD output files."
 ### GDD.py calls GDDcalculate.py to calculate GDD for each and every .csv file in ./input and will add a GDD column to data file. Even though input and output folder can be changed for GDD.py, it's not recomended as all other modules are set to look into ./input repository.
 ### GDD_plot.py will plot the cumulative Growing degree days for : Victoria, Montreal, Toronto from 2014 to 2017. It will creat 3 .png files namely : Victoria.GDD.png, MontrealGDD.png, TorontoGDD.png in ./docs folder.
 ### MinMaxplot.py will plot Annual cycle of Min and Max daily temperatures of Victoria, Montreal, Toronto from 2014 to 2017. It will creat 3 .png files namely : Min_Max_Temp_Victoria.png ...in ./docs folder.
