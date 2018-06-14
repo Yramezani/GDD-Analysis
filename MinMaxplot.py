@@ -54,13 +54,13 @@ def MinMaxPlot(cityname,year):
 
     
 plots('Victoria')
-plt.savefig('output/Victoria.png')
+plt.savefig('./docs/Victoria.png')
 #plt.show()
 plots('Montreal')
-plt.savefig('output/Montreal.png')
+plt.savefig('./docs/Montreal.png')
 #plt.show()
 plots('Toronto')
-plt.savefig('output/Toronto.png')
+plt.savefig('./docs/Toronto.png')
 #plt.show()
 
    
