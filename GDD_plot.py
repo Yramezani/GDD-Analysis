@@ -14,13 +14,14 @@ tbase = 10
 tupper = 50
 #The function takes city name as input and calcultes Growing degree days and plots with time.
 def plots(cityname):
-    years=[2014,2015,2017]
+    years=[2014,2015,2016]
     for year in years:
         for fname in glob.glob('./input/'+str(cityname) + '_' + str(year) + '.csv'):#searches for the specific file in the input folder
             print(str(cityname) + '_' + str(year))
             Data=pd.read_csv(fname,header=0)
             df=pd.DataFrame(Data)
-            year = df['Year'].unique()
+            year = list(df['Year'])[1]
+            df = df[df["Date/Time"] != str(year)+"-02-29"]
             tempmax = df['Max Temp (Â°C)']
             tempmin = df['Min Temp (Â°C)'] 
             length = len(pd.Series.dropna(tempmin))
@@ -30,7 +31,6 @@ def plots(cityname):
             #calculates the cumulative growing degree days
             Cumulative_GDD=np.cumsum(np.array(Calculated_GDD)) 
             Time=np.linspace(1,11,len(Cumulative_GDD))
-            #plots the Graph with GDD against Time
             plt.plot(Time,Cumulative_GDD,label=year)
         ax=plt.axes()
         plt.xlabel('Year')
@@ -42,7 +42,7 @@ def plots(cityname):
         ax.yaxis.grid(True)
         
 plots('Victoria')
-plt.savefig('output/Victoria.png')#saves the figure into output folder
+plt.savefig('output/Victoria.png')
 plt.show()
 plots('Montreal')
 plt.savefig('output/Montreal.png')
