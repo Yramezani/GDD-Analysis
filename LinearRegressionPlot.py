@@ -63,7 +63,7 @@ def LinearRegressionplots(cityname,tbase, tupper,startYear,endYear):
     ax.set_title('Annual Growing Degree Days in {} from {} to {}'.format(cityname,startYear,endYear))
     ax.set_xlabel('Year')
     ax.set_ylabel('Total GDD')
-    plt.savefig('./output/LinearReg_{}_{}_{}.png'.format(cityname,startYear,endYear))
+    plt.savefig('./Docs/LinearReg_{}_{}_{}.png'.format(cityname,startYear,endYear))
     #plt.savefig('output/Toronto.png')
-LinearRegressionplots('Ottawa',10, 50,2014,2016)
+#LinearRegressionplots('Ottawa',10, 50,2014,2016)
 
