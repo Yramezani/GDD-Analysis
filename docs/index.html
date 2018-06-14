@@ -9,18 +9,18 @@
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       body { font-family: 'Droid Serif'; 
-      background-color: #2b511a; }
+      background-color: #a9bf9e; }
       h1, h2, h3 {
         font-family: 'Droid Serif';
         font-weight: normal;
 	position
       }
       .remark-container {
-          background-color: #2b511a;
+          background-color: #a9bf9e;
           }
 	.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 	.footnote {
-        	position: absolute;
+        	position: center;
         	bottom: 2em;
       		}
     </style>
@@ -36,7 +36,11 @@ class: center, top
 
 ## A Data Study of Growing Degree Days in Canada
 
-.footnote[[Team 2: A. Ghayour-Khiavi, S. Gallant, T. Dasyam, Y. Ramezani]]
+.center[<img src="http://sherrycooper.com/wp-content/uploads/2015/04/growing-plant-.jpg" width="400" align="middle">]
+.footnote[[<b>Team 2:</b> A. Ghayour-Khiavi, 
+S. Gallant, 
+T. Dasyam, 
+Y. Ramezani]]
 
 ---
 class: left, top
@@ -44,6 +48,7 @@ class: left, top
 
 Growing degree days (GDD) are values used in phenology measuring total heat accumulation in a region, in order to predict rates of development in  plants or animals. Using the historical climate data available from the Government of Canada, this project aims to create a coherent workflow leading to the calculation and analysis of GDD for a number of Canadian cities.
 
+.center[<img src="https://d20vrrgs8k4bvw.cloudfront.net/images/open-graph/en-EU/data-analyst-nanodegree--nd002.jpg" width="400">]
 ---
 
 class: left, top
@@ -66,19 +71,19 @@ class: left, top
 
 <!-- 1 -->
 
-## How do plants grow?
+## 1. How do plants grow?
 
 Plants require a number of things in order to grow: sunlight, 
 water, CO<sub>2</sub>, and nutrients. Though sunlight does provide the energy 
 needed for plants to undergo photosynthesis, their development and maturation 
 is also largely dependant on daily ambient temperatures.
 
-.center[<img src="https://wonderopolis.org/wp-content/uploads/2012/05/bean-seeds_shutterstock_57850783.jpg" width="400" align="middle">]
+.center[<img src="https://wonderopolis.org/wp-content/uploads/2012/05/bean-seeds_shutterstock_57850783.jpg" width="400">]
 ---
 
 <!-- 2 -->
 
-## Understanding growing degree days
+## 2. Understanding growing degrees
 
 Growing degree days (GDD) are a way to monitor the total heat 
 accumulated by the plant through the ambient temperature, over a 
@@ -92,13 +97,13 @@ GDD proves an important tool for biologists, horiculturists, and agriculturers,
 allowing them to predict things like crop harvest dates, 
 nutrient timing, or even dates when insects will emerge.
 
- .center[<img src="http://www.almanac.com/sites/new.almanac.com/files/images/corn-field-440338_1280.jpg" width="300" align="middle">]
+ .center[<img src="http://www.almanac.com/sites/new.almanac.com/files/images/corn-field-440338_1280.jpg" width="300">]
 
 ---
 
 <!-- 3 -->
 
-## Calculating GDD values
+## 3. Calculating GDD values
 Growing degrees are defined as the number of degrees the average daily 
 temperature is, above a set base value (Tbase). This base value is 
 usually defaulted to 10 C, though each species may have a more 
@@ -115,31 +120,61 @@ Accumulated GDD can be determined by summing the daily GDD values for a range of
 ---
 <!-- 4 -->
 
-## Annual min/max temperature cycles for select cities
+## 4.1 Annual min/max temperature cycles for city1 in years
+.center[![Annual min/max cycles](.png)]
+
+---
+<!-- 5  -->
+
+## 4.2 Annual min/max temperature cycles for city2 in years
 .center[![Annual min/max cycles](https://weather-and-climate.com/uploads/average-temperature-the-azores-ponta-delgada.png)]
 
 ---
-<!-- 5 -->
+<!-- 6  -->
 
-## Accumulated GDD over time
+## 4.3 Annual min/max temperature cycles for city2 in years
+.center[![Annual min/max cycles](https://weather-and-climate.com/uploads/average-temperature-the-azores-ponta-delgada.png)]
+
+---
+<!-- 7  -->
+
+## 5.1 Accumulated GDD over time for city1 in years
 
 .center[![Accum. GDD vs Time](http://greatnorthwestwine.com/wp-content/uploads/2016/09/walla-walla-valley-gdd-9-1-16.jpg)]
 
 ---
-<!-- 6 -->
+<!-- 8  -->
+
+## 5.2 Accumulated GDD over time for city2 in years
+
+.center[![Accum. GDD vs Time](http://greatnorthwestwine.com/wp-content/uploads/2016/09/walla-walla-valley-gdd-9-1-16.jpg)]
+
+---
+<!-- 9  -->
+
+## 5.3 Accumulated GDD over time for city3 in years
+
+.center[![Accum. GDD vs Time](http://greatnorthwestwine.com/wp-content/uploads/2016/09/walla-walla-valley-gdd-9-1-16.jpg)]
+
+---
+<!-- 10  -->
 
 
-## GDD trends with confidence intervals
+## 6. GDD trends with confidence intervals for city in years
 
 
 
 ---
-<!-- 6 -->
+<!--  11 -->
 
 
-## Bokeh GDD plot
+## 7. Bokeh GDD plot for city in year
+
+---
+<!--  12 -->
 
 
+## 8. Statistical analysis of GDD year-over-year for city 
 
 ---
 

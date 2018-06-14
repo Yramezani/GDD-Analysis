@@ -5,6 +5,7 @@
 \usepackage{mathtools}
 \usepackage{gensymb}
 
+
 \title{CMSC 6950 Final Project}
 \smallskip
 \author{
@@ -18,9 +19,11 @@
 
 \DeclareMathSizes{12}{18}{12}{12}
 
+% % % % % % % % % % % % % % % % % % % % %
 
 \begin{document}
 \maketitle
+
 
 \begin{abstract}
 Growing degree days (GDD) are values used in phenology measuring total heat accumulation in a region, in order to predict rates of development in  plants or animals. Using the historical climate data available from the Government of Canada, this project aims to create a coherent workflow leading to the calculation and analysis of GDD for a number of Canadian cities.  
@@ -30,7 +33,7 @@ Growing degree days (GDD) are values used in phenology measuring total heat accu
 
 \tableofcontents
 
-
+% % % % % % % % % % % % % % % % % % % %
 \pagebreak
 
 \section{Motivations}\label{motivations}
@@ -57,8 +60,8 @@ nutrient timing, or even dates when insects will emerge.
 \pagebreak
 
 
-\section{Core tasks}\label{core tasks}
-\subsection{Calculating GDD}\label{calculating gdd}
+\section{Calculating GDD}\label{core tasks}
+%\subsection{Calculating GDD}\label{calculating gdd}
 
 Growing degrees are defined as the number of degrees the average daily 
 temperature is, above a set base value (Tbase). This base value is 
@@ -91,73 +94,102 @@ by the Government of Canada, where temperatures and precipitation values are rep
 Using this data, GDD values can be calculated for 
 specific regions and time periods, allowing for analysis of climate trends and patterns. 
 
+
+%\subsection{title}
+
+% % % % % % % % % % % % % % % % % % %
 \pagebreak
 
 \section{Results}\label{data analysis}
-Here we talk about plots/resultant data
+\subsection{Task 1.2}
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize Annual cycle of min/max daily temperatures for (City1) in (year)}
-\label{Label}		  
+\label{minmax1}		  
 \end{figure}
-		
+
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize Annual cycle of min/max daily temperatures for (City2) in (year)}
-\label{Label}		  
+\label{minmax2}		  
 \end{figure}
-		
+
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize Annual cycle of min/max daily temperatures for (City3) in (year)}
-\label{Label}		  
+\label{minmax3}		  
 \end{figure}
+
+\subsection{Task 1.4}	
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize Accumulated GDD for (City1) in (year)}
-\label{Label}		  
+\label{accuGDD_1}		  
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize Accumulated GDD for (City2) in (year)}
-\label{Label}		  
+\label{accuGDD_2}		  
 \end{figure}
 	
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize Accumulated GDD for (City3) in (year)}
-\label{Label}		  
+\label{accuGDD_3}		  
 \end{figure}	
 
+\pagebreak 	
+
+\subsection{Task 2.1}
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/name.png} 
+%\includegraphics[width=0.8\textwidth]{./docs/name.png} 
 \caption{\scriptsize GDD for (City) in (year) with confidence intervals}
-\label{Label}		  
+\label{GDDwCI}		  
 \end{figure}
 
+\subsection{Task 2.4}
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=0.9\textwidth]{./docs/city.html} 
+%\includegraphics[width=0.8\textwidth]{./docs/city.html} 
 \caption{\scriptsize Bokeh plot of GDD for (City) in (year)}
-\label{Label}		  
+\label{bokeh}		  
 \end{figure}
+
+
+\subsection{Task 2.4}
+\begin{figure}[!htbp]
+\centering
+%\includegraphics[width=0.8\textwidth]{./docs/city.html} 
+\caption{\scriptsize Statistical analysis of GDD year-over year for (City)}
+\label{regression}		  
+\end{figure}
+
 
 \pagebreak
 
-\section{Conclusions}\label{conclusions}
-We worked hard, and achieved very little.
-
 \bibliographystyle{abbrv}
 \bibliography{main}
+
+\begin{thebibliography}{2}
+\bibitem{GovCan} 
+Historical Climate Data | Environment and Climate Change Canada
+\\\texttt{http://climate.weather.gc.ca}
+\bibitem{GDD MSU} 
+Understanding growing degree days | Michigan State University
+\\\texttt{http://msue.anr.msu.edu/news/understanding\_growing\_degree\_days}
+\bibitem{farmwest} 
+Growing Degree Days | Farmwest
+\\\texttt{http://www.farmwest.com/node/936}
+\end{thebibliography}
 
 \end{document}
