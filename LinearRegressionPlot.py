@@ -36,11 +36,12 @@ def LinearRegressionplots(cityname,tbase, tupper,startYear,endYear):
             df=pd.DataFrame(Data)
             year = list(df['Year'])[1]
             df = df[df["Date/Time"] != str(year)+"-02-29"]
-            tempmax = df['Max Temp (Â°C)']
-            tempmin = df['Min Temp (Â°C)'] 
+            tempmax = df['Max Temp (°C)']
+            tempmin = df['Min Temp (°C)'] 
             length = len(pd.Series.dropna(tempmin))
             #calculates the growing degree days based on the following input
-            t= GDDcalculate(list(tempmin),list(tempmax), tbase, tupper, length)
+            #t= GDDcalculate(list(tempmin),list(tempmax), tbase, tupper, length)
+            t = list(df["GDD"])
             Calculated_GDD.append(t) 
             #calculates the cumulative growing degree days
             Cumulative_GDD=np.cumsum(np.array(Calculated_GDD)) 
@@ -65,5 +66,5 @@ def LinearRegressionplots(cityname,tbase, tupper,startYear,endYear):
     ax.set_ylabel('Total GDD')
     plt.savefig('./output/LinearReg_{}_{}_{}.png'.format(cityname,startYear,endYear))
     #plt.savefig('output/Toronto.png')
-LinearRegressionplots('Ottawa',10, 50,2014,2016)
+LinearRegressionplots('Montreal',10, 50,2014,2016)
 
