@@ -18,6 +18,7 @@ import csv
 import pylab
 
 def MinMaxPlot(cityname,year):
+    '''py will plot Annual cycle of Min and Max daily temperatures'''
     for fname in glob.glob('./input/'+str(cityname) + '_' + str(year) + '.csv'):#searches for the specific file in the input folder
             print(str(cityname) + '_' + str(year))
             Data=pd.read_csv(fname,header=0)
