@@ -9,23 +9,24 @@ mylong_Mont=-73.55
 mylat_Toronto=44.19
 mylong_Toronto=-79.66
 fig = plt.figure(figsize=(10,20))
-for fname in glob.glob('./input/Montreal_*20.csv'):
+for fname in glob.glob('./input/Montreal*'):
+    print(fname)
     Data=pd.read_csv(fname,header=0)
     df=pd.DataFrame(Data)
     year = df['Year'].unique()
     t = list(df["GDD"])
     T.append(t) 
-    average = np.nanmean(np.array(T))
+#     average = np.nanmean(np.array(T))
     Cumulative_GDD = np.cumsum(np.array(T))
 ax = plt.axes(projection=ccrs.PlateCarree())
 ax.set_extent([-145,-50,40,70])
 #plotting according to latitude and logitude positions
 ax.plot(mylong_Mont, mylat_Mont,
-         color='gray', linestyle='--',
+         color='red', linestyle='--',
          transform=ccrs.PlateCarree(),
          marker='o')
 ax.plot(mylong_Toronto, mylat_Toronto,
-         color='gray', linestyle='--',
+         color='red', linestyle='--',
          transform=ccrs.PlateCarree(),
          marker='o')
 ax.coastlines()
