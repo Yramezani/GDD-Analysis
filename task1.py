@@ -21,8 +21,8 @@ for fname in glob.glob("./input/Montreal*"):  # For loop for .csv files in given
 x = df["Date/Time"]
 year = list(df['Year'])[1]
 
-plt.plot(x, average, color="red", label="Average")
-plt.scatter(x, t, label=str(year))
+plt.plot(x, average, color="red", label="Average",linewidth=1)
+plt.scatter(x, t, label=str(year), s=8)
 
 U = np.nanpercentile(T, 95, axis=0)
 D = np.nanpercentile(T, 5, axis=0)
@@ -33,11 +33,14 @@ plt.fill_between(x, U, D, alpha=0.15, color='blue', label="5-95 percentile")
 plt.fill_between(x, Uu, Dd, alpha=0.15, color='red', label="25-75 percentile")
 
 plt.xlabel('time')
-plt.ylabel('Daily Accumulation (Celsius)')
+plt.ylabel('Daily Accumulation (Celicius)')
 plt.title('2014-2017 daily Growing degree days of Montreal')
 plt.grid(True)
 plt.tight_layout()
 plt.legend()
 plt.xticks([0, 30, 58, 89, 119, 150, 180, 211, 242, 272, 303, 333],
 ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], rotation='vertical')
-plt.savefig('./docs/task1.png')
+fig = plt.gcf()
+fig.set_size_inches(18.5, 10.5)
+fig.savefig('test2png.png', dpi=100)
+plt.savefig('./docs/Task1.png')
