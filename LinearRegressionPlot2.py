@@ -17,12 +17,12 @@ df = pd.DataFrame()
 df2 = pd.DataFrame()
 tbase = 10
 tupper = 50
-startYear=2014
-endYear=2016
+startYear=2012
+endYear=2017
 #The function takes city name and years as input and calcultes Linear Regression for spesific citiy.
 def LinearRegressionplots(cityname,tbase, tupper,startYear,endYear):
     """The function takes city name and years as input and calcultes Linear Regression for spesific citiy."""
-    years=[2014,2015,2016]
+    years=[2012,2013,2014,2015,2016,2017]
     for year in years:
         for fname in glob.glob('./input/'+str(cityname) + '_' + str(year) + '.csv'):#searches for the specific file in the input folder
             print(str(cityname) + '_' + str(year))
