@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import glob
-Min = [0]*30
-Max = [0]*30
+Min = [100]*30 #a bviously big number to make sure others will be smaller
+Max = [-100]*30
 for fname in glob.glob("./input/Montreal*"):  # For loop for .csv files in given input folder
     D = pd.read_csv(fname, header=0)  # skipped rows will change if data frame's shape change
     df = pd.DataFrame(D)
