@@ -1,4 +1,5 @@
-##CMSC6950 -(Growing degree-days) Members: Y. Ramezani, A. Ghayour-Khiavi, S. Gallant, T. Dasyam
+CMSC6950 -(Growing degree-days) Members: Y. Ramezani, A. Ghayour-Khiavi, S. Gallant, T. Dasyam
+
 Growing degree days (GDD) are values used in phenology measuring total heat accumulation in a region, in order to predict rates of development in plants or animals. Using the historical climate data available from the Government of Canada, this project aims to create a coherent workﬂow leading to the calculation and analysis of GDD for a number of Canadian cities.
 
 ## To run programs python 3 is needed. list of necessary packages are:
